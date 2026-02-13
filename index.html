@@ -3,144 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouthOK</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>YouthOK - Your Mental Wellness Companion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <span id="back-button" class="back-button">&lt;</span>
-            <img src="logo.png" alt="YouthOK Logo" class="logo">
-            <h1 id="app-title">YouthOK</h1>
-            <span id="menu-button" class="menu-button">&#9776;</span>
-        </header>
-        <main>
-            <section id="home-screen" class="screen active">
-                <p class="mood-prompt">What is your mood now?</p>
-                <div class="mood-tracker-container">
-                    <div class="mood-tracker" data-mood="Happy">
-                        <div class="mood-color" style="background-color: #FFD700;"></div>
-                        <span>Happy</span>
-                    </div>
-                    <div class="mood-tracker" data-mood="Sad">
-                        <div class="mood-color" style="background-color: #4682B4;"></div>
-                        <span>Sad</span>
-                    </div>
-                    <div class="mood-tracker" data-mood="Anxious">
-                        <div class="mood-color" style="background-color: #DAA520;"></div>
-                        <span>Anxious</span>
-                    </div>
-                    <div class="mood-tracker" data-mood="Excited">
-                        <div class="mood-color" style="background-color: #FF69B4;"></div>
-                        <span>Excited</span>
-                    </div>
-                     <div class="mood-tracker" data-mood="Calm">
-                        <div class="mood-color" style="background-color: #87CEEB;"></div>
-                        <span>Calm</span>
-                    </div>
-                    <div class="mood-tracker" data-mood="Angry">
-                        <div class="mood-color" style="background-color: #DC143C;"></div>
-                        <span>Angry</span>
+    <header>
+        <div class="logo">YouthOK</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="coaches.html">Coaches</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Your Mental Wellness Companion</h1>
+                <p>A safe space to understand your feelings and connect with a supportive community.</p>
+                
+                <div id="mood-tracker">
+                    <h2>How are you feeling today?</h2>
+                    <div class="mood-selector">
+                        <div class="mood" data-mood="happy"></div>
+                        <div class="mood" data-mood="calm"></div>
+                        <div class="mood" data-mood="sad"></div>
+                        <div class="mood" data-mood="anxious"></div>
+                        <div class="mood" data-mood="stressed"></div>
                     </div>
                 </div>
-                <button id="youth-button" class="primary-button">Youth</button>
-                <button id="coach-button" class="secondary-button">Coach</button>
-            </section>
-            <section id="questions-screen" class="screen">
-                <div class="question-container">
-                    <div class="question active">
-                        <h3>General & Presentation</h3>
-                        <p>What made you decide to come in today?</p>
-                        <textarea placeholder="Your answer..."></textarea>
-                        <button class="next-question">Next</button>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About YouthOK</h2>
+                <p>We are dedicated to providing young people with the resources they need to thrive. Our platform offers a range of tools and a supportive community to help you on your mental wellness journey.</p>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Self-Assessment</h3>
+                        <p>Take our self-assessment to gain insights into your mental wellbeing.</p>
                     </div>
-                    <div class="question">
-                        <h3>Health & Habits</h3>
-                        <p>How have your sleeping and eating habits been lately?</p>
-                        <textarea placeholder="Your answer..."></textarea>
-                        <button class="next-question">Next</button>
+                    <div class="card">
+                        <h3>Community Support</h3>
+                        <p>Connect with peers and mentors in our safe and supportive community.</p>
                     </div>
-                    <div class="question">
-                        <h3>Strengths & Goals</h3>
-                        <p>What are three things you like about yourself or that you're good at?</p>
-                        <textarea placeholder="Your answer..."></textarea>
-                        <button class="submit-questions">Submit</button>
-                    </div>
-                </div>
-            </section>
-            <section id="coach-view-screen" class="screen">
-                <h2>Client Intake Form</h2>
-                <div id="answers-container"></div>
-            </section>
-            <section id="registration-screen" class="screen">
-                <form id="registration-form">
-                    <input type="text" placeholder="Name" id="register-name">
-                    <input type="email" placeholder="Email" id="register-email">
-                    <input type="password" placeholder="Password" id="register-password">
-                    <button type="submit" class="primary-button">Sign up</button>
-                    <p>Already have an account? <a href="#login" id="login-link">Login</a></p>
-                </form>
-            </section>
-            <section id="login-screen" class="screen">
-                <form id="login-form">
-                    <input type="email" placeholder="Email" id="login-email">
-                    <input type="password" placeholder="Password" id="login-password">
-                    <button type="submit" class="primary-button">Login</button>
-                </form>
-            </section>
-            <section id="about-us-screen" class="screen">
-                <div class="image-placeholder"></div>
-                <p>We’re here to make getting support feel normal, easy, and safe.</p>
-<p>Life between 17 and 35 can be exciting — but also overwhelming. Academic pressure, career uncertainty, relationships, expectations, and mental load can pile up fast. We believe no one should have to navigate that alone.</p>
-<p>Our platform helps you figure out what kind of support fits you best — whether that’s a coach to help you move forward, a counsellor for deeper emotional support, or a buddy from your polytechnic who understands what you're going to through.</p>
-<p>We’re not here to label you.<br>We’re here to listen, guide, and connect you to the right help at the right time.</p>
-<p>Support shouldn’t feel intimidating.<br>It should feel like your next step.</p>
-                <h3>Team</h3>
-                <div class="team-members">
-                    <div class="team-member">
-                        <p><strong>Rachel Tan</strong></p>
-                        <p>👩🏻‍💼 Coach A</p>
-                    </div>
-                    <div class="team-member">
-                        <p><strong>Daniel Lim</strong></p>
-                        <p>👨🏽‍🏫 Coach B</p>
-                    </div>
-                    <div class="team-member">
-                        <p><strong>Aisha Rahman</strong></p>
-                        <p>👩🏽‍💻 Coach C</p>
+                    <div class="card">
+                        <h3>Expert Coaches</h3>
+                        <p>Connect with a variety of certified coaches, including wellness, career, and academic coaches, for personalized guidance.</p>
                     </div>
                 </div>
-                <div class="social-media">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section">
+            <div class="container">
+                <h2>What Our Users Say</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <p>"YouthOK has been a game-changer for me. I feel less alone and more understood."</p>
+                        <h4>- Alex, 19</h4>
+                    </div>
+                    <div class="card">
+                        <p>"The self-assessment tool helped me realize I needed to talk to someone. I'm so grateful for this platform."</p>
+                        <h4>- Sarah, 21</h4>
+                    </div>
                 </div>
-            </section>
-            <section id="contact-us-screen" class="screen">
-                <form>
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <textarea placeholder="Message"></textarea>
-                    <button class="primary-button">Send</button>
-                </form>
-                <div class="social-media">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </section>
-            <section id="menu-screen" class="screen">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#registration">Registration</a></li>
-                    <li><a href="#about-us">About us</a></li>
-                    <li><a href="#contact-us">Contact us</a></li>
-                </ul>
-            </section>
-        </main>
-    </div>
-    <script type="module" src="firebase-config.js"></script>
-    <script type="module" src="main.js"></script>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 YouthOK. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
